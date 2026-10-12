@@ -1,0 +1,661 @@
+<!doctype html><html lang="uz-Cyrl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Қандли диабет қўлланмаси</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@700&display=swap">
+<style>
+/* Layout: one calm reading column, large type, big tap targets; sticky bar with text-size buttons. */
+:root {
+  --bg: #F4F8F6;
+  --surface: #FFFFFF;
+  --ink: #14201A;
+  --muted: #45564D;
+  --accent: #0B5D3B;
+  --accent-soft: #E1F0E7;
+  --on-accent: #FFFFFF;
+  --line: #C6D8CD;
+  --warn: #7F3E00;
+  --warn-soft: #FFF0D9;
+  --danger: #A3150C;
+  --danger-soft: #FDE7E4;
+  --veg: #4A9660;
+  --prot: #C46C18;
+  --carb: #3465AA;
+  --wedge-text: #FFFFFF;
+  --font-body: "PT Sans", "Noto Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-head: "PT Serif", "Noto Serif", Georgia, "Times New Roman", serif;
+  --scale: 1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1512; --surface: #16201B; --ink: #E8F1EC; --muted: #A8BAB0;
+    --accent: #72CC9B; --accent-soft: #1B3326; --on-accent: #0E1512; --line: #2E4238;
+    --warn: #F3BC6B; --warn-soft: #33250E; --danger: #FF8C82; --danger-soft: #3B1613;
+    --veg: #4F9C64; --prot: #C67526; --carb: #3D6FB5;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1512; --surface: #16201B; --ink: #E8F1EC; --muted: #A8BAB0;
+  --accent: #72CC9B; --accent-soft: #1B3326; --on-accent: #0E1512; --line: #2E4238;
+  --warn: #F3BC6B; --warn-soft: #33250E; --danger: #FF8C82; --danger-soft: #3B1613;
+  --veg: #4F9C64; --prot: #C67526; --carb: #3D6FB5;
+  color-scheme: dark;
+}
+html { font-size: calc(20px * var(--scale)); scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 1rem; line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+a { color: var(--accent); text-underline-offset: 0.18em; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* top bar */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.bar-in {
+  max-width: 42rem; margin: 0 auto; padding: 0.45rem 16px;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.bar-title { flex: 1; min-width: 0; font-weight: 700; color: var(--accent); font-size: 0.9rem; line-height: 1.25; }
+.size { display: flex; gap: 0.4rem; align-items: center; }
+.size span { font-size: 0.75rem; color: var(--muted); }
+.size button {
+  min-width: 3rem; min-height: 2.6rem; padding: 0 0.6rem;
+  font: 700 1rem var(--font-body); color: var(--accent);
+  background: var(--accent-soft); border: 2px solid var(--accent); border-radius: 10px; cursor: pointer;
+}
+.size button:disabled { opacity: 0.4; cursor: default; }
+
+main { max-width: 42rem; margin: 0 auto; padding-inline: 16px; padding-block: 1.4rem 4rem; }
+
+h1, h2 { font-family: var(--font-head); color: var(--accent); text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.65rem; }
+h3 { font-size: 1.2rem; margin: 1.6rem 0 0.5rem; color: var(--ink); text-wrap: balance; line-height: 1.3; }
+p { margin: 0 0 0.9rem; }
+.lead { font-size: 1.1rem; color: var(--muted); margin-top: 0.6rem; }
+.note { font-size: 0.88rem; color: var(--muted); }
+.ref { font-size: 0.72rem; color: var(--muted); text-decoration: none; white-space: nowrap; vertical-align: 0.15em; }
+b, strong { font-weight: 700; }
+
+section { padding-top: 2.4rem; }
+section + section { border-top: 2px solid var(--line); margin-top: 2.4rem; }
+.sec-num { display: block; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 0.3rem; }
+
+/* table of contents */
+.toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.6rem; margin-top: 1.4rem; }
+.toc a {
+  display: flex; align-items: center; gap: 0.6rem; min-height: 3.2rem; padding: 0.6rem 0.9rem;
+  background: var(--surface); border: 2px solid var(--line); border-radius: 12px;
+  color: var(--ink); text-decoration: none; font-weight: 700; line-height: 1.25;
+}
+.toc a:hover { border-color: var(--accent); }
+.toc .n {
+  flex: none; width: 1.8rem; height: 1.8rem; border-radius: 50%;
+  display: grid; place-items: center; font-size: 0.85rem;
+  background: var(--accent); color: var(--on-accent);
+}
+
+/* callouts */
+.box { border-radius: 14px; padding: 1rem 1.1rem; margin: 1.2rem 0; background: var(--accent-soft); }
+.box > :last-child { margin-bottom: 0; }
+.box .label { display: block; font-weight: 700; font-size: 1.1rem; color: var(--accent); margin-bottom: 0.35rem; }
+.box.warn { background: var(--warn-soft); }
+.box.warn .label { color: var(--warn); }
+.box.danger { background: var(--danger-soft); border: 2px solid var(--danger); }
+.box.danger .label { color: var(--danger); }
+.sos { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1rem; }
+.sos .num { font-family: var(--font-head); font-size: 2.4rem; line-height: 1; color: var(--danger); font-weight: 700; }
+.sos .txt { flex: 1 1 14rem; min-width: 0; }
+
+/* lists */
+ol.steps, ul.dots { margin: 0.4rem 0 1rem; padding: 0; list-style: none; display: grid; gap: 0.75rem; }
+ol.steps { counter-reset: s; }
+ol.steps > li { counter-increment: s; position: relative; padding-left: 2.6rem; }
+ol.steps > li::before {
+  content: counter(s); position: absolute; left: 0; top: 0.05rem;
+  width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 0.9rem;
+}
+ul.dots > li { position: relative; padding-left: 1.5rem; }
+ul.dots > li::before { content: ""; position: absolute; left: 0.2rem; top: 0.62em; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent); }
+
+/* label/value rows (tables that stack on phones) */
+.rows { border: 2px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--surface); margin: 0.8rem 0 1rem; }
+.rows .head { background: var(--accent); color: var(--on-accent); font-weight: 700; padding: 0.6rem 1rem; }
+.row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 0.3rem 1rem; padding: 0.75rem 1rem; }
+.row + .row { border-top: 1px solid var(--line); }
+.row > :first-child { font-weight: 700; }
+.row > * { min-width: 0; }
+@media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+.swap .row > :first-child { font-weight: 400; color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+.swap .row > :last-child::before { content: "→ "; color: var(--accent); font-weight: 700; }
+
+/* plate */
+.plate { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; margin: 1rem 0; }
+.plate svg { width: 11rem; max-width: 100%; height: auto; flex: none; }
+.legend { flex: 1 1 15rem; min-width: 0; display: grid; gap: 0.7rem; }
+.legend div { display: grid; grid-template-columns: 1.1rem 1fr; gap: 0.7rem; align-items: start; }
+.legend i { width: 1.1rem; height: 1.1rem; border-radius: 4px; margin-top: 0.3rem; }
+.legend b { display: block; }
+
+/* glucose targets */
+.targets { display: grid; gap: 0.7rem; margin: 1rem 0; }
+.target { background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 0.8rem 1rem; }
+.target.low { border-color: var(--danger); }
+.target .when { font-weight: 700; display: block; }
+.target .val { font-size: 1.5rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.target.low .val { color: var(--danger); }
+.target .alt { color: var(--muted); font-size: 0.9rem; }
+
+/* menu days */
+.days { display: grid; gap: 1rem; margin: 1rem 0; }
+.day { background: var(--surface); border: 2px solid var(--line); border-radius: 14px; overflow: hidden; }
+.day h3 { margin: 0; padding: 0.55rem 1rem; background: var(--accent); color: var(--on-accent); font-size: 1.15rem; }
+.meal { padding: 0.65rem 1rem; }
+.meal + .meal { border-top: 1px solid var(--line); }
+.meal b { display: block; color: var(--accent); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+/* diary */
+.diary-form { display: grid; gap: 0.8rem; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 1rem; }
+.diary-form .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 0.8rem; }
+.diary-form label { display: grid; gap: 0.25rem; font-weight: 700; font-size: 0.95rem; min-width: 0; }
+.diary-form input, .diary-form select {
+  width: 100%; min-height: 3rem; padding: 0.4rem 0.7rem;
+  font: 1.05rem var(--font-body); color: var(--ink); background: var(--bg);
+  border: 2px solid var(--line); border-radius: 10px;
+}
+.diary-form input:focus, .diary-form select:focus { border-color: var(--accent); outline: none; }
+.btn {
+  min-height: 3.2rem; padding: 0.5rem 1.2rem; border-radius: 12px; cursor: pointer;
+  font: 700 1.05rem var(--font-body); background: var(--accent); color: var(--on-accent); border: 0;
+}
+.msg { min-height: 1.4rem; font-weight: 700; color: var(--accent); }
+.msg.err { color: var(--danger); }
+.entries { display: grid; gap: 0.6rem; margin-top: 1rem; list-style: none; padding: 0; }
+.entry { background: var(--surface); border: 2px solid var(--line); border-radius: 12px; padding: 0.7rem 1rem; display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 0.8rem; }
+.entry .when { font-weight: 700; }
+.entry .vals { grid-column: 1 / -1; font-variant-numeric: tabular-nums; }
+.entry .vals span { display: inline-block; margin-right: 1rem; }
+.entry .flag { font-weight: 700; }
+.flag.lo, .flag.hi { color: var(--danger); }
+.flag.mid { color: var(--warn); }
+.entry .com { grid-column: 1 / -1; color: var(--muted); font-size: 0.92rem; }
+.del { background: none; border: 2px solid var(--line); border-radius: 10px; color: var(--muted); font: 700 0.85rem var(--font-body); padding: 0.3rem 0.7rem; cursor: pointer; min-height: 2.4rem; }
+.empty { color: var(--muted); padding: 0.8rem 0; }
+
+/* sources */
+.src { margin: 0.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.6rem; counter-reset: r; }
+.src li { counter-increment: r; display: grid; grid-template-columns: 2.2rem 1fr; }
+.src li::before { content: "[" counter(r) "]"; color: var(--muted); font-size: 0.9rem; padding-top: 0.1rem; }
+.src a { overflow-wrap: anywhere; }
+
+.top {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 6;
+  width: 3.2rem; height: 3.2rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--on-accent); text-decoration: none; font-size: 1.4rem; font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid var(--line); }
+</style>
+
+<div class="bar" id="bar">
+  <div class="bar-in">
+    <div class="bar-title">Қандли диабет 2-тури<br><span style="font-weight:400;color:var(--muted)">уй қўлланмаси</span></div>
+    <div class="size" role="group" aria-label="Ҳарф ўлчами">
+      <span>Ҳарф</span>
+      <button type="button" id="smaller" aria-label="Ҳарфни кичрайтириш">А−</button>
+      <button type="button" id="bigger" aria-label="Ҳарфни катталаштириш">А+</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <header>
+    <h1>Қандли диабет 2-тури</h1>
+    <p class="lead">Уй шароитида қўллаш учун далилларга асосланган рацион ва кундалик тавсиялар</p>
+
+    <div class="box danger">
+      <div class="sos">
+        <span class="num">103</span>
+        <span class="txt"><b>Шошилинч ёрдам.</b> Одам ҳушсиз бўлса, юта олмаса ёки қанд жуда юқори бўлиб, қусиш ва нафас қисиши бўлса — дарҳол қўнғироқ қилинг. <a href="#qand">Батафсил</a></span>
+      </div>
+    </div>
+
+    <nav class="toc" aria-label="Мундарижа">
+      <a href="#asos"><span class="n">1</span>Асосий қоида</a>
+      <a href="#likopcha"><span class="n">2</span>Ликопча усули</a>
+      <a href="#mahsulot"><span class="n">3</span>Нимани танлаш керак</a>
+      <a href="#menyu"><span class="n">4</span>7 кунлик меню</a>
+      <a href="#harakat"><span class="n">5</span>Ҳаракат ва тартиб</a>
+      <a href="#qand"><span class="n">6</span>Қанд ва хавфли белгилар</a>
+      <a href="#reja"><span class="n">7</span>Шахсий режа ва кундалик</a>
+      <a href="#manba"><span class="n">8</span>Манбалар</a>
+    </nav>
+  </header>
+
+  <!-- 1 -->
+  <section id="asos">
+    <span class="sec-num">1-бўлим</span>
+    <h2>Асосий қоида</h2>
+    <div class="box">
+      <span class="label">Энг самарали ёндашув</span>
+      <p>Порцияси меъёрланган рацион + мунтазам ҳаракат + зарур бўлса вазнни камайтириш + буюрилган даволаш ва қанд назорати. Битта маҳсулот ёки дамлама бу вазифаларни бажармайди. <a class="ref" href="#manba">[1, 2, 3]</a></p>
+    </div>
+
+    <h3>Қайси рационни танлаш керак?</h3>
+    <p>Барча беморлар учун ягона «энг яхши» парҳез йўқ. Ўрта ер денгизи услубидаги овқатланиш, DASH ва мослаштирилган камроқ углеводли рацион фойдали вариантлардир. Танлов ёш, вазн, дорилар, буйрак фаолияти, одатлар ва бюджетга мос бўлиши керак. <a class="ref" href="#manba">[1]</a></p>
+
+    <h3>Ушбу қўлланма учун амалий танлов</h3>
+    <p>Кўп сабзавот, дуккакли ва бутун донли маҳсулотлар; балиқ, товуқ ва бошқа оқсил манбалари; оз миқдорда ўсимлик ёғи ва ёнғоқ. Ширин ичимликлар ва ортиқча оқ унли маҳсулотларни камайтиринг. Буни маҳаллий таомлар билан ҳам амалга ошириш мумкин. <a class="ref" href="#manba">[1, 2]</a></p>
+
+    <ol class="steps">
+      <li><b>Биринчи қадам:</b> шакарли чой, газли ичимлик ва ширин шарбат ўрнига сув ёки шакарсиз чой танланг. <a class="ref" href="#manba">[2]</a></li>
+      <li><b>Ҳар асосий овқатда:</b> ликопча усулидан фойдаланинг; нон, гуруч ва картошка миқдорини биргаликда ҳисобга олинг. <a class="ref" href="#manba">[2, 4]</a></li>
+      <li><b>Вазн ортиқча бўлса:</b> бошланғич вазннинг камида 5–7% ини аста камайтириш мақсадини шифокор билан белгиланг. 90 кг учун бу 4,5–6,3 кг. Вазни меъёрида ёки озғин одамга озиш тавсия этилмайди. <a class="ref" href="#manba">[3]</a></li>
+    </ol>
+
+    <div class="box warn">
+      <span class="label">Дорилар ҳақида</span>
+      <p>Инсулин ёки қандни туширувчи дориларни ўзингизча тўхтатманг. Овқат ва ҳаракат ўзгарса, айниқса инсулин, гликлазид ёки глимепирид қабул қилганда, қанд тушиб кетиши мумкин. Дозани шифокор мослаштиради. <a class="ref" href="#manba">[3]</a></p>
+    </div>
+    <p class="note">Қўлланма катталар учун умумий намуна. Ҳомиладорлик, буйрак ёки юрак етишмовчилиги, жуда кексалик, тез-тез гипогликемия ва сабабсиз озишда алоҳида режа керак.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="likopcha">
+    <span class="sec-num">2-бўлим</span>
+    <h2>Ликопча усули</h2>
+    <p style="margin-top:0.8rem">Асосий овқатни тахминан 23 см диаметрли ликопчада режалаштиринг. <a class="ref" href="#manba">[2]</a></p>
+    <div class="plate">
+      <svg viewBox="0 0 200 200" role="img" aria-label="Ликопча: ярми сабзавот, чораги оқсил, чораги углевод">
+        <circle cx="100" cy="100" r="97" fill="var(--surface)" stroke="var(--accent)" stroke-width="4"/>
+        <path d="M100 100 L100 8 A92 92 0 0 0 100 192 Z" fill="var(--veg)" stroke="var(--surface)" stroke-width="3"/>
+        <path d="M100 100 L100 8 A92 92 0 0 1 192 100 Z" fill="var(--prot)" stroke="var(--surface)" stroke-width="3"/>
+        <path d="M100 100 L192 100 A92 92 0 0 1 100 192 Z" fill="var(--carb)" stroke="var(--surface)" stroke-width="3"/>
+        <text x="55" y="109" text-anchor="middle" fill="var(--wedge-text)" font-family="PT Sans, Arial, sans-serif" font-weight="700" font-size="26">1/2</text>
+        <text x="140" y="64" text-anchor="middle" fill="var(--wedge-text)" font-family="PT Sans, Arial, sans-serif" font-weight="700" font-size="24">1/4</text>
+        <text x="140" y="152" text-anchor="middle" fill="var(--wedge-text)" font-family="PT Sans, Arial, sans-serif" font-weight="700" font-size="24">1/4</text>
+      </svg>
+      <div class="legend">
+        <div><i style="background:var(--veg)"></i><span><b>Ярми — крахмалсиз сабзавот</b>Бодринг, помидор, карам, кўкат, қалампир, бақлажон.</span></div>
+        <div><i style="background:var(--prot)"></i><span><b>Чораги — оқсил</b>Балиқ, терисиз товуқ, тухум, ёғсиз гўшт ёки мос ўсимлик оқсили.</span></div>
+        <div><i style="background:var(--carb)"></i><span><b>Чораги — углевод</b>Гречка, сули, гуруч, нон, картошка ёки дуккакли.</span></div>
+      </div>
+    </div>
+
+    <h3>Уйда ўлчаш учун бошланғич намуна</h3>
+    <div class="rows">
+      <div class="head">Бир овқат учун намунавий миқдор</div>
+      <div class="row"><span>Сабзавот</span><span>Ликопчанинг ярми; одатда 200–300 г.</span></div>
+      <div class="row"><span>Балиқ / товуқ / ёғсиз гўшт</span><span>Кафт катталигида, пишган ҳолда тахминан 100–120 г.</span></div>
+      <div class="row"><span>Донли гарнир</span><span>Пишган гречка ёки гуруч: тахминан ярим стакан (80–100 г).</span></div>
+      <div class="row"><span>Нон / картошка</span><span>Муқобил: 30–40 г нон ёки тахминан 100 г картошка.</span></div>
+      <div class="row"><span>Қатиқ / кефир</span><span>Шакарсиз 150–200 мл; унинг углеводи ҳам ҳисобга олинади.</span></div>
+      <div class="row"><span>Ёғ / ёнғоқ</span><span>Салатга 1 чой қошиқ ёғ ёки кичик порция тузсиз ёнғоқ (15–20 г).</span></div>
+    </div>
+    <p class="note">Бу миқдорлар индивидуал рецепт эмас, менюни тузиш учун намуна. Энергия ва углевод эҳтиёжи бўйича порциялар ўзгаради. Гўшт ва дон миқдори пишган, нон эса тайёр ҳолдаги вазндир. Стакан: тахминан 200 мл.</p>
+
+    <div class="box">
+      <span class="label">Углеводларни бирга ҳисобланг</span>
+      <p>Гуруч + нон + картошка + ширин ичимлик бир овқатда қўшилса, жами углевод ортади. Дуккаклилар ҳам оқсил, ҳам углевод беради. Мева ва сут маҳсулотлари ҳам ҳисобга киради; углеводни бутунлай йўқотиш шарт эмас. <a class="ref" href="#manba">[2, 4]</a></p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="mahsulot">
+    <span class="sec-num">3-бўлим</span>
+    <h2>Нимани кўпайтириш, нимани камайтириш?</h2>
+    <div class="rows swap">
+      <div class="head">Одатдаги танлов → уйда амалий алмаштириш</div>
+      <div class="row"><span>Шакарли чой, кола, шарбат</span><span>Сув, шакарсиз чой; бутун мева шарбатдан тўйимлироқ.</span></div>
+      <div class="row"><span>Катта порция нон ва гуруч</span><span>Порцияни кичрайтиринг; бутун донли нон ёки гречка танланг.</span></div>
+      <div class="row"><span>Қовурилган гўшт, колбаса</span><span>Димланган, қайнатилган ёки печда пиширилган балиқ ва товуқ.</span></div>
+      <div class="row"><span>Ширин йогурт, қуюлтирилган сут</span><span>Шакарсиз қатиқ, кефир ёки йогурт; ёрлиқни текширинг.</span></div>
+      <div class="row"><span>Кўп сариёғ, қаймоқ, думба</span><span>Ўлчанган оз миқдорда ўсимлик ёғи; тузсиз ёнғоқ.</span></div>
+      <div class="row"><span>Пишириқ, печенье, конфет</span><span>Режага мос бир кичик мева ёки шакарсиз йогурт.</span></div>
+    </div>
+
+    <div class="box">
+      <span class="label">Мева тақиқланмайди</span>
+      <p>Бир маҳалга бир кичик олма ёки апельсин, ёхуд тахминан ярим стакан тўғралган мева танлаш мумкин. Порция ва жами углевод муҳим. Қуруқ мева зич: 2 ош қошиқ майизнинг ўзида тахминан 15 г углевод бор. «Шакар қўшилмаган» дегани углеводсиз дегани эмас. <a class="ref" href="#manba">[5]</a></p>
+    </div>
+
+    <h3>«Табиий» маҳсулотлар ҳақидаги ҳақиқат</h3>
+    <ul class="dots">
+      <li><b>Асал ва жигарранг шакар:</b> табиий бўлса ҳам қандни оширадиган углевод манбалари. Оддий шакар ўрнига даволаш мақсадида ишлатилмайди. <a class="ref" href="#manba">[1, 4]</a></li>
+      <li><b>Долчин, берберин ва дамламалар:</b> айрим тадқиқотларда кичик таъсир кузатилган, лекин далиллар етарли ва изчил эмас. Ишончли даволаш ўрнини боса олмайди; дори билан ўзаро таъсир қилиши мумкин. <a class="ref" href="#manba">[6]</a></li>
+      <li><b>Долчиннинг катта дозаси:</b> айниқса кассия тури таркибидаги кумарин жигар учун зарарли бўлиши мумкин. Уни капсула ёки кўп миқдордаги дамлама сифатида бошламанг. <a class="ref" href="#manba">[6]</a></li>
+    </ul>
+
+    <div class="box warn">
+      <span class="label">Оддий қоида</span>
+      <p>Таомга зиравор қўшиш мумкин. Қандни «бутунлай даволайди» деган чой, қўшимча ёки детокс ваъдасига таянманг. Далили кучли асос — рацион, ҳаракат, назорат ва зарур дори давосидир. <a class="ref" href="#manba">[3, 6]</a></p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="menyu">
+    <span class="sec-num">4-бўлим</span>
+    <h2>7 кунлик меню</h2>
+    <p class="note" style="margin-top:0.8rem">Муаллиф тузган амалий намуна; порциялар «Ликопча усули» бўлимидаги мезонларга мослаштирилади. Калория режаси эмас. Фаол ёки вазни меъёрдаги одамга каттароқ порциялар керак бўлиши мумкин.</p>
+    <div class="box warn">
+      <span class="label">Менюдан фойдаланиш</span>
+      <p>3 асосий овқат — қулай намунавий тартиб, ҳамма учун мажбурий эмас. Аниқ вақт ва углевод миқдори дори режимига мос бўлсин. Очлик, кето парҳез ёки углеводни кескин камайтиришни шифокорсиз бошламанг. <a class="ref" href="#manba">[3, 4]</a></p>
+    </div>
+    <div class="days" id="days"></div>
+
+    <div class="box">
+      <span class="label">Қўшимча мева ёки тамадди</span>
+      <p>Фақат очлик ва шахсий режага қараб бир кичик мева, 150 мл кефир ёки 15 г ёнғоқдан биттасини танланг. Улар кунлик рационга қўшиб ҳисобланади. Ҳар овқат устига автоматик қўшиш шарт эмас. <a class="ref" href="#manba">[4, 5]</a></p>
+    </div>
+
+    <h3>Маҳаллий таомларни қандай мослаштириш мумкин?</h3>
+    <ul class="dots">
+      <li><b>Палов:</b> гуруч ва ёғни камайтиринг, думба қўшманг, салатни кўпайтиринг. Паловнинг ўзи углевод манбаи; ёнидаги нонни ҳисобга олинг.</li>
+      <li><b>Лағмон ва шўрва:</b> угра ёки картошка миқдорини ўлчанг; сабзавот ва ёғсиз гўштни кўпайтиринг. Нонни одат бўйича қўшманг.</li>
+      <li><b>Манти ва сомса:</b> ҳажми ва хамири турлича бўлгани учун ҳамма учун бир хил дона сони тўғри келмайди. Кичик порция, салат ва шакарсиз ичимлик билан режаланг.</li>
+    </ul>
+
+    <h3>Энг осон икки тайёрлаш усули</h3>
+    <ul class="dots">
+      <li><b>Салат:</b> карам, бодринг ва кўкатни майдаланг; бир порцияга 1 чой қошиқ ёғ ва лимон шарбати.</li>
+      <li><b>Печдаги балиқ:</b> 120 г балиқ ва 250 г сабзавотни оз ёғ билан пиширинг; ёнига режаланган донли гарнир қўшинг.</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section id="harakat">
+    <span class="sec-num">5-бўлим</span>
+    <h2>Ҳаракат ва уй тартиби</h2>
+    <h3>Ҳаракатни аста оширинг</h3>
+    <p>Кўпчилик катталар учун ҳафтасига камида 150 дақиқа ўртача жадалликдаги ҳаракат ва 2–3 марта куч машқлари тавсия этилади. Масалан, тезроқ юриш ва енгил қаршилик машқлари. Бошлашдан олдин асоратлар ва дори режимига мос хавфсиз юкламани келишиб олинг. <a class="ref" href="#manba">[3, 7]</a></p>
+    <div class="rows">
+      <div class="head">Амалий бошлаш намунаси</div>
+      <div class="row"><span>1-ҳафта</span><span>Ўзингизни яхши ҳис қилсангиз, бир овқатдан кейин 5–10 дақиқа юринг.</span></div>
+      <div class="row"><span>2-ҳафта</span><span>10–15 дақиқадан кунига 1–2 марта; ҳолатингизга қараб оширинг.</span></div>
+      <div class="row"><span>Кейинги ҳафталар</span><span>30 дақиқа × 5 кун ёки кун давомида бўлиб бажариш орқали 150 дақиқага етинг.</span></div>
+      <div class="row"><span>Куч машқи</span><span>Ҳафтасига 2–3 кун: стулдан туриш, деворга таяниб қўл букиш ёки резина тасма; енгил юкламадан бошланг.</span></div>
+    </div>
+    <div class="box warn">
+      <span class="label">Эҳтиёт бўлинг</span>
+      <p>Юриш — юқори қандни шошилинч «даволаш» усули эмас. Ҳолсизлик, қусиш ёки кетон бўлса машқ қилманг. Инсулин ёки сульфонилмочевина қабул қилсангиз, машқ олди ва кейинги қанд назорати ҳамда тез сўриладиган углеводни ёнингизда олиб юриш режасини келишиб олинг. <a class="ref" href="#manba">[3, 9]</a></p>
+    </div>
+
+    <h3>Ҳар куни бажариладиган одатлар</h3>
+    <ul class="dots">
+      <li><b>Уйқу:</b> бир хил вақтда ётинг; одатда 7–8 соатлик уйқуни мақсад қилинг. <a class="ref" href="#manba">[3]</a></li>
+      <li><b>Сув:</b> ширин ичимликлар ўрнига сув ичинг. Юрак ёки буйрак муаммосида суюқлик миқдорини шифокор белгилайди. <a class="ref" href="#manba">[2, 3]</a></li>
+      <li><b>Оёқлар:</b> ҳар куни кўздан кечиринг; мос пойабзал кийинг. Яра, қизариш ёки шиш пайдо бўлса кўрикка мурожаат қилинг. <a class="ref" href="#manba">[3]</a></li>
+      <li><b>Тамаки ва алкоголь:</b> тамаки маҳсулотларидан воз кечинг. Алкоголь инсулин ва айрим дорилар билан қанд тушишига олиб келиши мумкин; бошлаш тавсия этилмайди. <a class="ref" href="#manba">[3]</a></li>
+    </ul>
+
+    <div class="box">
+      <span class="label">Натижани қачон баҳолаш керак?</span>
+      <p>Бир марталик қанд натижаси билан хулоса қилманг. Қайдларни шифокорга кўрсатинг; HbA1c таҳлили тахминан охирги 3 ойлик назоратни акс эттиради. Текширув даври даволашдаги ўзгариш ва назорат ҳолатига қараб белгиланади. <a class="ref" href="#manba">[8]</a></p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="qand">
+    <span class="sec-num">6-бўлим</span>
+    <h2>Қандни кузатиш ва хавфли белгилар</h2>
+    <p style="margin-top:0.8rem">Кўпчилик ҳомиладор бўлмаган катталар учун умумий мақсадлар қуйидагича. Кексалик, ҳамроҳ касаллик ва гипогликемияда мақсад бошқача бўлиши мумкин. Булар ташхис чегаралари эмас. <a class="ref" href="#manba">[8]</a></p>
+    <div class="targets">
+      <div class="target"><span class="when">Овқатдан олдин</span><span class="val">4,4–7,2 ммоль/л</span> <span class="alt">(80–130 мг/дл)</span></div>
+      <div class="target"><span class="when">Овқат бошланганидан 2 соат кейин</span><span class="val">10,0 ммоль/л дан паст</span> <span class="alt">(180 мг/дл дан паст)</span></div>
+      <div class="target low"><span class="when">Қанд пастлиги чегараси</span><span class="val">3,9 ммоль/л дан паст</span> <span class="alt">(70 мг/дл дан паст)</span></div>
+    </div>
+    <p>Ўлчаш вақтларини даволаш режимига қараб белгиланг. Рацион ўзгаришини баҳолаш учун бир неча кун айрим овқат олди ва овқат бошланганидан 2 соат кейинги қандни ёзиш фойдали бўлиши мумкин. Инсулин қабул қилганда кўпроқ ўлчаш талаб этилиши мумкин. <a class="ref" href="#manba">[4, 8]</a></p>
+
+    <h3>Қанд тушса: 15–15 қоидаси</h3>
+    <p>Титраш, совуқ тер, юрак уриши ёки очлик бўлса қандни текширинг. Қанд <b>3,9 ммоль/л дан паст</b> бўлса, одам ҳушёр ва юта олса: <a class="ref" href="#manba">[10]</a></p>
+    <ol class="steps">
+      <li><b>15 г</b> тез сўриладиган углевод олинг: ёрлиқ бўйича глюкоза таблеткаси ёки тахминан <b>120 мл</b> оддий шарбат / шакарли газли ичимлик.</li>
+      <li><b>15 дақиқадан</b> кейин қайта ўлчанг. Ҳали паст бўлса, 15 г углеводни такрорланг.</li>
+      <li>Қанд тиклангач ва кейинги овқат узоқ бўлса, оқсил ва углеводли кичик тамадди қилинг.</li>
+    </ol>
+    <p>Шоколад қандни тез кўтариш учун қулай танлов эмас.</p>
+
+    <div class="box danger">
+      <span class="label">Ҳушсиз ёки юта олмаётган одам</span>
+      <p>Оғзига овқат, сув ёки шакар солманг. <b>Дарҳол 103 га қўнғироқ қилинг.</b> Глюкагон буюрилган бўлса, уни қўллашни биладиган киши берсин. <a class="ref" href="#manba">[8, 10]</a></p>
+    </div>
+    <div class="box danger">
+      <span class="label">Юқори қандда қачон шошилинч ёрдам керак?</span>
+      <p>Қанд <b>16,7 ммоль/л (300 мг/дл)</b> ёки ундан юқори бўлиб қолса, ёхуд қусиш, қорин оғриғи, чуқур/тез нафас, кучли сувсизланиш, уйқучанлик ёки онг бузилиши бўлса, шошилинч ёрдамга мурожаат қилинг. Белгилар бўлса маълум рақамга етишини кутманг. <a class="ref" href="#manba">[9, 11]</a></p>
+    </div>
+    <p class="note">Касаллик кунлари дорилар ва кетон текшируви учун олдиндан шифокор билан режа тузинг. Инсулин дозасини тахмин билан ўзгартирманг. Такроран юқори ёки паст натижаларни шифокорга билдиринг. <a class="ref" href="#manba">[8, 9]</a></p>
+  </section>
+
+  <!-- 7 -->
+  <section id="reja">
+    <span class="sec-num">7-бўлим</span>
+    <h2>Шахсий режа</h2>
+    <h3>Шифокор билан аниқлаштириладиган 5 савол</h3>
+    <ol class="steps">
+      <li>Менинг овқат олди, овқатдан кейинги қанд ва HbA1c мақсадим қанча?</li>
+      <li>Рацион ўзгарса дориларимга тузатиш керакми?</li>
+      <li>Буйрак фаолиятим сабаб оқсил ёки суюқлик чеклови борми?</li>
+      <li>Қайси вақтда ва қанчалик тез-тез қанд ўлчайман?</li>
+      <li>HbA1c, буйрак, кўз ва оёқ текширувлари қачон керак?</li>
+    </ol>
+
+    <h3 id="kundalik">Қанд кундалиги</h3>
+    <p>Ўлчаган қандингизни шу ерга ёзинг. Ёзувлар фақат шу телефон ёки компьютерда сақланади; шифокорга кўрсатиш учун экранни очиб беринг.</p>
+    <form class="diary-form" id="diary" novalidate>
+      <div class="two">
+        <label for="d-date">Сана
+          <input id="d-date" type="date">
+        </label>
+        <label for="d-meal">Овқат
+          <select id="d-meal">
+            <option>Нонушта</option>
+            <option>Тушлик</option>
+            <option>Кечки овқат</option>
+            <option>Бошқа вақт</option>
+          </select>
+        </label>
+      </div>
+      <div class="two">
+        <label for="d-before">Овқатдан олдин (ммоль/л)
+          <input id="d-before" type="text" inputmode="decimal" placeholder="масалан 6,2" autocomplete="off">
+        </label>
+        <label for="d-after">2 соат кейин (ммоль/л)
+          <input id="d-after" type="text" inputmode="decimal" placeholder="масалан 8,5" autocomplete="off">
+        </label>
+      </div>
+      <label for="d-note">Нима едингиз / ҳаракат / изоҳ
+        <input id="d-note" type="text" placeholder="масалан: гречка, товуқ, 15 дақиқа юриш" autocomplete="off">
+      </label>
+      <div><button class="btn" type="submit">Ёзиб қўйиш</button></div>
+      <div class="msg" id="d-msg" role="status" aria-live="polite"></div>
+    </form>
+    <ul class="entries" id="entries"></ul>
+    <p class="note">Маълумотни шахсийлаштириш учун: ёш, бўй, вазн, HbA1c, сўнгги қандлар, дорилар номи/дозаси ва буйрак ҳолати керак. Ушбу қўлланма уларнинг ўрнига индивидуал даволаш буюрмайди.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="manba">
+    <span class="sec-num">8-бўлим</span>
+    <h2>Текширилган манбалар</h2>
+    <p class="note" style="margin-top:0.8rem">Расмий бемор маълумотлари ва ADA тавсиялари. Текширилган сана: 30.09.2026. Матндаги [рақам] шу рўйхатга мос. Меню ва рецептлар манбалардаги тамойиллар асосида тузилган оригинал намуналар. Ҳаволалар инглиз тилида.</p>
+    <ol class="src">
+      <li><a href="https://diabetes.org/food-nutrition/eating-for-diabetes-management" target="_blank" rel="noopener">ADA — Овқатланиш услублари</a></li>
+      <li><a href="https://diabetes.org/food-nutrition/eating-healthy" target="_blank" rel="noopener">ADA — Соғлом овқатланиш ва ликопча усули</a></li>
+      <li><a href="https://www.niddk.nih.gov/health-information/diabetes/overview/healthy-living-with-diabetes" target="_blank" rel="noopener">NIDDK — Диабет билан соғлом яшаш</a></li>
+      <li><a href="https://diabetes.org/food-nutrition/understanding-carbs/carb-counting-and-diabetes" target="_blank" rel="noopener">ADA — Углеводларни ҳисоблаш</a></li>
+      <li><a href="https://diabetes.org/food-nutrition/reading-food-labels/fruit" target="_blank" rel="noopener">ADA — Мева танлови ва порциялар</a></li>
+      <li><a href="https://www.nccih.nih.gov/health/diabetes-and-dietary-supplements-what-you-need-to-know" target="_blank" rel="noopener">NCCIH — Диабет ва озиқ-овқат қўшимчалари</a></li>
+      <li><a href="https://diabetes.org/health-wellness/fitness/anaerobic-exercise-diabetes" target="_blank" rel="noopener">ADA — Жисмоний машқ ва диабет</a></li>
+      <li><a href="https://www.niddk.nih.gov/health-information/diabetes/overview/managing-diabetes" target="_blank" rel="noopener">NIDDK — Диабетни бошқариш</a></li>
+      <li><a href="https://diabetes.org/living-with-diabetes/sick-days" target="_blank" rel="noopener">ADA — Касаллик кунлари режаси</a></li>
+      <li><a href="https://diabetes.org/living-with-diabetes/hypoglycemia-low-blood-glucose/symptoms-treatment" target="_blank" rel="noopener">ADA — Қанд тушиши ва 15–15 қоидаси</a></li>
+      <li><a href="https://www.cdc.gov/diabetes/about/diabetic-ketoacidosis.html" target="_blank" rel="noopener">CDC — Диабетик кетоацидоз</a></li>
+    </ol>
+    <div class="box">
+      <span class="label">Эслаб қолинг</span>
+      <p>Рацион қанд назоратининг муҳим қисми. У буюрилган давони алмаштирмайди; дорини камайтириш ёки тўхтатиш фақат шифокор баҳолаши билан амалга оширилади.</p>
+    </div>
+  </section>
+
+  <footer class="note">Умумий маълумот; шахсий даволаш режаси эмас. © DINOV</footer>
+</main>
+
+<a class="top" href="#bar" aria-label="Бошига қайтиш">↑</a>
+
+<script>
+(function () {
+  /* menu */
+  var days = [
+    ["Сули бўтқаси: 40 г қуруқ сули, сувда; шакарсиз қатиқ 150 мл.", "Товуқ 120 г; гречка ярим стакан; карам-бодринг салати 250 г.", "Балиқ 120 г; димланган сабзавот 250 г; бутун донли нон 30 г."],
+    ["Тухум 1 дона; бутун донли нон 40 г; помидор-бодринг 200 г.", "Кам ёғли мошли таом: пишган мош ярим стакан, гўшт 80 г; салат 250 г.", "Товуқ 120 г; печдаги қовоқча ва карам 250 г; гречка ярим стакан."],
+    ["Шакарсиз йогурт 200 г; сули 30 г; ёнғоқ 15 г.", "Балиқ 120 г; пишган гуруч ярим стакан; кўкатли салат 250 г.", "Димлама: ёғсиз гўшт 100 г, сабзавот 250 г, картошка 100 г; нонсиз."],
+    ["Ёғи кам творог 100 г; бутун донли нон 40 г; бодринг ва кўкат.", "Ёғсиз гўшт 100 г; гречка ярим стакан; карам-сабзи салати 250 г.", "Пишган ловия ярим стакан; товуқ 80 г; бақлажон ва қалампир 250 г; нонсиз."],
+    ["Тухум 1 дона; нон 40 г; помидор ва кўкат.", "Мослаштирилган палов: пишган гуруч 80–100 г, ёғсиз гўшт 80–100 г, сабзи; катта салат. Қўшимча нонсиз.", "Балиқ 120 г; сабзавот 250 г; гречка ярим стакан."],
+    ["Сули 40 г (қуруқ), сувда; шакарсиз йогурт 150 г.", "Товуқли шўрва: товуқ 100 г, сабзавот ва картошка 100 г; салат. Нонсиз.", "Ёғсиз гўшт 100 г; печдаги сабзавот 250 г; нон 30–40 г."],
+    ["Творог 100 г; нон 40 г; бодринг-помидор.", "Пишган нўхат ярим стакан; товуқ 80 г; карам-кўкат салати 250 г.", "Товуқ 120 г; гречка ярим стакан; димланган сабзавот 250 г."]
+  ];
+  var meals = ["Нонушта", "Тушлик", "Кечки овқат"];
+  var box = document.getElementById("days");
+  days.forEach(function (d, i) {
+    var art = document.createElement("article");
+    art.className = "day";
+    var h = document.createElement("h3");
+    h.textContent = (i + 1) + "-кун";
+    art.appendChild(h);
+    d.forEach(function (t, j) {
+      var m = document.createElement("div");
+      m.className = "meal";
+      var b = document.createElement("b");
+      b.textContent = meals[j];
+      m.appendChild(b);
+      m.appendChild(document.createTextNode(t));
+      art.appendChild(m);
+    });
+    box.appendChild(art);
+  });
+
+  /* storage helpers */
+  function load(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+
+  /* text size */
+  var sizes = [0.9, 1, 1.15, 1.3, 1.5];
+  var si = load("qd-size", 1);
+  if (typeof si !== "number" || si < 0 || si >= sizes.length) si = 1;
+  var bigger = document.getElementById("bigger"), smaller = document.getElementById("smaller");
+  function applySize() {
+    document.documentElement.style.setProperty("--scale", sizes[si]);
+    smaller.disabled = si === 0;
+    bigger.disabled = si === sizes.length - 1;
+  }
+  bigger.addEventListener("click", function () { if (si < sizes.length - 1) { si++; applySize(); save("qd-size", si); } });
+  smaller.addEventListener("click", function () { if (si > 0) { si--; applySize(); save("qd-size", si); } });
+  applySize();
+
+  /* diary */
+  var entries = load("qd-diary", []);
+  if (!Array.isArray(entries)) entries = [];
+  var list = document.getElementById("entries");
+  var msg = document.getElementById("d-msg");
+  var dDate = document.getElementById("d-date");
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  dDate.value = today();
+  function num(s) {
+    s = String(s || "").trim().replace(",", ".");
+    if (!s) return null;
+    var n = parseFloat(s);
+    return isFinite(n) && n > 0 && n < 40 ? Math.round(n * 10) / 10 : NaN;
+  }
+  function fmt(n) { return String(n).replace(".", ","); }
+  function flag(v, after) {
+    if (v == null) return null;
+    if (v < 3.9) return ["lo", "паст — 15–15 қоидаси"];
+    if (v >= 16.7) return ["hi", "жуда юқори"];
+    if (!after && v > 7.2) return ["mid", "мақсаддан юқори"];
+    if (after && v >= 10) return ["mid", "мақсаддан юқори"];
+    return ["ok", "мақсадда"];
+  }
+  function fmtDate(s) { var p = String(s).split("-"); return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : s; }
+  function render() {
+    list.innerHTML = "";
+    if (!entries.length) {
+      var e = document.createElement("li");
+      e.className = "empty";
+      e.textContent = "Ҳозирча ёзув йўқ. Биринчи ўлчовни юқоридаги шаклга киритинг.";
+      list.appendChild(e);
+      return;
+    }
+    entries.slice().reverse().forEach(function (en) {
+      var li = document.createElement("li");
+      li.className = "entry";
+      var w = document.createElement("span");
+      w.className = "when";
+      w.textContent = fmtDate(en.date) + " · " + en.meal;
+      var del = document.createElement("button");
+      del.type = "button"; del.className = "del"; del.textContent = "Ўчириш";
+      del.addEventListener("click", function () {
+        entries = entries.filter(function (x) { return x.id !== en.id; });
+        save("qd-diary", entries); render();
+      });
+      var vals = document.createElement("div");
+      vals.className = "vals";
+      [["Олдин", en.before, false], ["2 соат кейин", en.after, true]].forEach(function (r) {
+        if (r[1] == null) return;
+        var sp = document.createElement("span");
+        sp.appendChild(document.createTextNode(r[0] + ": " + fmt(r[1]) + " "));
+        var f = flag(r[1], r[2]);
+        var fl = document.createElement("span");
+        fl.className = "flag " + f[0];
+        fl.textContent = "(" + f[1] + ")";
+        sp.appendChild(fl);
+        vals.appendChild(sp);
+      });
+      li.appendChild(w); li.appendChild(del); li.appendChild(vals);
+      if (en.note) {
+        var c = document.createElement("div");
+        c.className = "com"; c.textContent = en.note;
+        li.appendChild(c);
+      }
+      list.appendChild(li);
+    });
+  }
+  document.getElementById("diary").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var b = num(document.getElementById("d-before").value);
+    var a = num(document.getElementById("d-after").value);
+    msg.className = "msg";
+    if ((b !== b) || (a !== a)) { msg.className = "msg err"; msg.textContent = "Қандни рақам билан ёзинг, масалан 6,2."; return; }
+    if (b == null && a == null) { msg.className = "msg err"; msg.textContent = "Камида битта қанд натижасини ёзинг."; return; }
+    var en = {
+      id: Date.now(),
+      date: dDate.value || today(),
+      meal: document.getElementById("d-meal").value,
+      before: b, after: a,
+      note: document.getElementById("d-note").value.trim().slice(0, 200)
+    };
+    entries.push(en);
+    var ok = save("qd-diary", entries);
+    render();
+    document.getElementById("d-before").value = "";
+    document.getElementById("d-after").value = "";
+    document.getElementById("d-note").value = "";
+    var low = (b != null && b < 3.9) || (a != null && a < 3.9);
+    var high = (b != null && b >= 16.7) || (a != null && a >= 16.7);
+    if (low) { msg.className = "msg err"; msg.textContent = "Қанд паст. 15–15 қоидасини бажаринг (6-бўлим)."; }
+    else if (high) { msg.className = "msg err"; msg.textContent = "Қанд жуда юқори. Белгилар бўлса шошилинч ёрдам: 103."; }
+    else msg.textContent = ok ? "Ёзиб қўйилди." : "Ёзилди, лекин бу браузер уни сақлаб қололмайди.";
+  });
+  render();
+})();
+</script>
+</body></html>
